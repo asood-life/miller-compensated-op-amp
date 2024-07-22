@@ -86,12 +86,9 @@ If balance conditions are satisfied, <code>M4</code> is in saturation.
 
 $$C_c > 0.22*C_L$$
 
-<p>
-    Given that I have chosen C<sub>L</sub> as 10 pF => I have <b>C<sub>C</sub> &gt; 2.2 pF</b>.
-</p>
-<p>
-    Choosing <b>C<sub>C</sub> = 3 pF</b>, using the Slew Rate specifications, I<sub>5</sub> can be calculated as follows:
-</p>
+<p>Given that I have chosen C<sub>L</sub> as 10 pF => I have <b>C<sub>C</sub> &gt; 2.2 pF</b>.</p>
+    
+Choosing <b>C<sub>C</sub> = 3 pF</b>, using the Slew Rate specifications, I<sub>5</sub> can be calculated as follows:
 
 $$I_5 = SR*C_C = (10*10^6)*(3*10^{-12}) = 30 μA$$
 
@@ -113,24 +110,26 @@ For a 60<sup>0</sup> phase margin, I have <b>g<sub>m6</sub> >= 10*g<sub>m1</sub>
 
 $$S_6 = \frac{g_{m6}}{g_{m4}} * \frac{W_4}{L_4} = \frac{g_{m6}}{g_{m4}} * S_4 = 190$$
 
+Furthermore, I<sub>6</sub> can be determined as follows
+
 $$I_6 = \frac{g_{m6}^2}{2*K_6^{'}*S_6} = 95μA$$
 
 The value of S<sub>6</sub> exceeds the design specification, but gives better phase margins. 
 
 $$S_7 = S_8 =  S_5*\frac{I_6}{I_5} = 19$$
 
-For the final step, with the desired ratios for all the transistors determined, I proceed to calculate the gain as follows.
+For the final step, I proceed to calculate the gain as follows.
 
 $$A_v = \frac{2*g_{m1}*g_{m6}}{I_5*(λ_2+λ_4)*I_6*(λ_6+λ_7)} = 3180\frac{V}{V}$$
 
-<h3 id="results">Results</h3>
+<!-- <h3 id="results">Results</h3> -->
 
 
 <h3 id="future-work">Future Work</h3>
 <ul>
     <li>
         <strong>Optimize Transistor Sizing for Enhanced Performance</strong>
-        <p>Further investigation into the transistor sizing is necessary to achieve an optimal balance between gain, bandwidth, and power consumption. By fine-tuning the sizes of the transistors in the differential pair and current mirrors, the overall performance of the op-amp can be improved. This includes optimizing the gain-bandwidth product and ensuring that the op-amp meets the required specifications under different operating conditions.</p>
+        <p>Further investigation into the transistor sizing is crucial to achieve an optimal balance between gain, bandwidth, and power consumption. By fine-tuning the sizes of the transistors in the differential pair and current mirrors, the overall performance of the op-amp can be improved. This includes optimizing the gain-bandwidth product and ensuring that the op-amp meets the required specifications under different operating conditions.</p>
     </li>
     <li>
         <strong>Implement Advanced Compensation Techniques</strong>
@@ -138,7 +137,7 @@ $$A_v = \frac{2*g_{m1}*g_{m6}}{I_5*(λ_2+λ_4)*I_6*(λ_6+λ_7)} = 3180\frac{V}{V
     </li>
     <li>
         <strong>Conduct Post-Layout Simulations and Testing</strong>
-        <p>After completing the layout design, it's crucial to perform post-layout simulations to validate the op-amp's performance under realistic conditions. This includes accounting for parasitic effects such as capacitances and inductances that arise during the physical layout.</p>
+        <p>After completing the layout design, it's crucial to perform post-layout simulations to validate the op-amp's performance under realistic conditions. This includes accounting for parasitic effects such as capacitances.</p>
     </li>
 </ul>
 
