@@ -90,7 +90,7 @@ $$C_c > 0.22*C_L$$
     
 Choosing <b>C<sub>C</sub> = 3 pF</b>, using the Slew Rate specifications, I<sub>5</sub> can be calculated as follows:
 
-$$I_5 = SR*C_C = (10*10^6)*(3*10^{-12}) = 30 μA$$
+<!-- $$I_5 = SR*C_C = (10*10^6)*(3*10^{-12}) = 30 μA$$ -->
 
 Determining S<sub>3</sub> using <b>ICMR</b> requirements
 
@@ -98,7 +98,7 @@ $$S_3 = S_4 = \frac{I_5}{K_3^{'}*[V_{DD} - V_{in}^{max} - |V_{T3}| + V_{T1}]^2} 
 
 In order to compute, S<sub>1</sub> and S<sub>2</sub>, I need to first determine value of g<sub>m1</sub>.
 
-$$g_{m1} = GB*C_C = (2*pi*5*10^6)*(3*10^{-12}) = 94.25μS$$
+<!-- $$g_{m1} = GB*C_C = (2*pi*5*10^6)*(3*10^{-12}) = 94.25μS$$ -->
 
 $$S_1 = S_2 = \frac{g_{m1}^2}{2*K_1^{'}*I_1} = 3$$
 
@@ -120,7 +120,7 @@ $$S_7 = S_8 =  S_5*\frac{I_6}{I_5} = 19$$
 
 For the final step, I proceed to calculate the gain as follows.
 
-$$A_v = \frac{2*g_{m1}*g_{m6}}{I_5*(λ_2+λ_4)*I_6*(λ_6+λ_7)} = 3180\frac{V}{V}$$
+<!-- $$A_v = \frac{2*g_{m1}*g_{m6}}{I_5*(λ_2+λ_4)*I_6*(λ_6+λ_7)} = 3180\frac{V}{V}$$ -->
 
 <!-- <h3 id="results">Results</h3> -->
 
@@ -137,7 +137,7 @@ $$A_v = \frac{2*g_{m1}*g_{m6}}{I_5*(λ_2+λ_4)*I_6*(λ_6+λ_7)} = 3180\frac{V}{V
     </li>
     <li>
         <strong>Conduct Post-Layout Simulations and Testing</strong>
-        <p>After completing the layout design, it's crucial to perform post-layout simulations to validate the op-amp's performance under realistic conditions. This includes accounting for parasitic effects such as capacitances.</p>
+        <p>After completing the layout design, it's crucial to perform post-layout simulations to validate the op-amp's performance under realistic conditions. This includes accounting for parasitic effects.</p>
     </li>
 </ul>
 
