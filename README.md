@@ -28,7 +28,7 @@
 </div>
 <div>
     <p>
-        <b>First Stage: Differential Amplifier</b>: provides the initial amplification and high input impedance. It typically consists of a pair of transistors configured to amplify the difference between the input signals.
+        <b>First Stage: Differential Amplifier</b>: provides the initial amplification and high input impedance. It typically consists of a pair of transistors configured to amplify the difference between the input signals to the circuit.
     </p>
 </div>
 <div>
@@ -65,7 +65,7 @@
 
 $$Considering \ \ S_i = \frac{W_i}{L_i} \ \ for \ \ i^{th} \ \ transistor$$
 
-<p>For optimal performance, all transistors need to be kept in <b>saturation</b>. <code>M4</code> is the only one that cannot be forced into saturation, regardless of any internal or external voltages applied. Hence, some conditions must be established to force it.</p>
+<p>For optimal performance, all transistors need to be kept in <b>saturation</b>. <code>M4</code> is the only one that cannot be forced into saturation, regardless of any internal or external voltages applied. Hence, some conditions must be established.</p>
 
 <p>To achieve this, assume that V<sub>SG<sub>4</sub></sub> = V<sub>SG<sub>6</sub></sub>. As a result, the gate and drain of <code>M4</code> will be at the same potential, leading <code>M4</code> into saturation. We then delve into the following equations.</p>
 
@@ -81,7 +81,7 @@ If balance conditions are satisfied, <code>M4</code> is in saturation.
 
 <h4>Design Procedure</h4>
 <div>
-    In reference to the design specifications mentioned above, the following calculations have been performed. For a desired Phase Margin of 60<sup>o</sup>, it is necessary to choose a minimum value for C<sub>C</sub>.
+    In reference to the design specifications mentioned above, the following calculations have been performed. For a desired Phase Margin of 60<sup>o</sup>, it is necessary to choose a minimum value for C<sub>C</sub> as per the following.
 </div>
 
 $$C_c > 0.22*C_L$$
@@ -93,21 +93,17 @@ $$C_c > 0.22*C_L$$
     Choosing <b>C<sub>C</sub> = 3 pF</b>, using the Slew Rate specifications, I<sub>5</sub> can be calculated as follows:
 </p>
 
-
 $$I_5 = SR*C_C = (10*10^6)*(3*10^{-12}) = 30 μA$$
 
-
-Determining S<sub>3</sub> using <b>ICMR<b> requirements, 
+Determining S<sub>3</sub> using <b>ICMR</b> requirements
 
 $$S_3 = S_4 = \frac{I_5}{K_3^{'}*[V_{DD} - V_{in}^{max} - |V_{T3}| + V_{T1}]^2} = 30$$
 
 In order to compute, S<sub>1</sub> and S<sub>2</sub>, I need to first determine value of g<sub>m1</sub>.
 
-
 $$g_{m1} = GB*C_C = (2*pi*5*10^6)*(3*10^{-12}) = 94.25μS$$
 
 $$S_1 = S_2 = \frac{g_{m1}^2}{2*K_1^{'}*I_1} = 3$$
-
 
 Calculating  S<sub>5</sub> using the following relation
 
@@ -124,7 +120,6 @@ The value of S<sub>6</sub> exceeds the design specification, but gives better ph
 $$S_7 = S_8 =  S_5*\frac{I_6}{I_5} = 19$$
 
 For the final step, with the desired ratios for all the transistors determined, I proceed to calculate the gain as follows.
-
 
 $$A_v = \frac{2*g_{m1}*g_{m6}}{I_5*(λ_2+λ_4)*I_6*(λ_6+λ_7)} = 3180\frac{V}{V}$$
 
