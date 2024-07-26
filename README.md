@@ -46,7 +46,7 @@
 </div>
 <div>
     <p>
-        <b>Capacitive Load</b>: In applications where the op-amp requires to drive a capacitive load, the Miller-compensated design is beneficial. Capacitive loads can cause phase shift and leads to unstable circuit.
+        <b>Capacitive Load</b>: In applications where the op-amp requires to drive a capacitive load, the Miller-compensated design is beneficial. Capacitive loads can cause phase shift and can lead to unstable circuit.
     </p>
 </div>
 <br>
@@ -67,13 +67,13 @@
 
 $$Considering \ \ S_i = \frac{W_i}{L_i} \ \ for \ \ i^{th} \ \ transistor$$
 
-<p>For optimal performance, all transistors need to be kept in <b>saturation</b>. <code>M4</code> is the only one that cannot be forced into saturation, regardless of any internal or external voltages applied. To achieve this, assume that V<sub>SG<sub>4</sub></sub> = V<sub>SG<sub>6</sub></sub>. As a result, the gate and drain of <code>M4</code> will be at the same potential, leading it into saturation. We then delve into the following equations.</p>
+<p>For optimal performance, all transistors need to be kept in <b>saturation</b>. <code>M4</code> is the only one that cannot be forced into saturation, regardless of any internal or external voltages applied. To achieve this, assume that V<sub>SG<sub>4</sub></sub> = V<sub>SG<sub>6</sub></sub>. As a result, the gate and drain of <code>M4</code> will be at the same potential, leading it into saturation.</p>
 
 $$V_{SG_4} = V_{SG_6} => I_6 = \frac{S_6}{S_4}*I_4$$
 
 $$I_7 = \frac{S_7}{S_5}*I_5 = \frac{S_7}{S_5}*2I_4$$
 
-$$For \ \ Balance \ \ Condition \ \ \frac{S_6}{S_4} = \frac{2*S_7}{S_5}$$
+$$For \ \ Balance \ \ Condition \ => \ \frac{S_6}{S_4} = \frac{2*S_7}{S_5}$$
 
 $$V_{DG_4} = 0$$
 
@@ -109,7 +109,6 @@ $$C_c > 0.22*C_L$$
 </div>
 <div>
     <h4>Operating Point Analysis</h4>
-    <br><br>
     <div align="center">
         <img width="300" src="./assets/operating-point-1.jpg">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -118,7 +117,7 @@ $$C_c > 0.22*C_L$$
     <br>
 </div>
 <div>
-    <h4>Frequency Response (Bode Plot)
+    <h4>Frequency Response
     <br><br>
     <div align="center">
         <img width="600" src="./assets/bode-plot.jpg">
@@ -130,7 +129,7 @@ $$C_c > 0.22*C_L$$
 <ul>
     <li>
         <strong>Optimize Transistor Sizing for Enhanced Performance</strong>
-        <p>Further investigation into transistor sizing is crucial to achieve an optimal balance between gain, bandwidth and power consumption. By fine-tuning the sizes of the transistors in the differential pair and current mirrors, the overall performance of op-amp can be improved. This includes optimizing the gain-bandwidth product and ensuring that the op-amp meets the required specifications.</p>
+        <p>Further investigation into transistor sizing is crucial to achieve an optimal balance between gain, bandwidth and power consumption. By fine-tuning the sizes of the transistors in the differential pair and current mirrors the overall performance of op-amp can be improved. This includes optimizing the gain-bandwidth product and ensuring that the operational amplifier meets the required specifications.</p>
     </li>
     <li>
         <strong>Implement Advanced Compensation Techniques</strong>
