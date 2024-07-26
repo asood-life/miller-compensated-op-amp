@@ -46,10 +46,10 @@
 </div>
 <div>
     <p>
-        <b>Capacitive Load</b>: In applications where the op-amp requires to drive a capacitive load, the Miller-compensated design is particularly beneficial. Capacitive loads can cause phase shift and potentially lead to unstable circuit.
+        <b>Capacitive Load</b>: In applications where the op-amp requires to drive a capacitive load, the Miller-compensated design is beneficial. Capacitive loads can cause phase shift and leads to unstable circuit.
     </p>
 </div>
-
+<br>
 <h4>Circuit Analysis and Design Specifications</h4>
 
 |    Parameter     |  Value   |
@@ -67,9 +67,7 @@
 
 $$Considering \ \ S_i = \frac{W_i}{L_i} \ \ for \ \ i^{th} \ \ transistor$$
 
-<p>For optimal performance, all transistors need to be kept in <b>saturation</b>. <code>M4</code> is the only one that cannot be forced into saturation, regardless of any internal or external voltages applied.</p>
-
-<p>To achieve this, assume that V<sub>SG<sub>4</sub></sub> = V<sub>SG<sub>6</sub></sub>. As a result, the gate and drain of <code>M4</code> will be at the same potential, leading it into saturation. We then delve into the following equations.</p>
+<p>For optimal performance, all transistors need to be kept in <b>saturation</b>. <code>M4</code> is the only one that cannot be forced into saturation, regardless of any internal or external voltages applied. To achieve this, assume that V<sub>SG<sub>4</sub></sub> = V<sub>SG<sub>6</sub></sub>. As a result, the gate and drain of <code>M4</code> will be at the same potential, leading it into saturation. We then delve into the following equations.</p>
 
 $$V_{SG_4} = V_{SG_6} => I_6 = \frac{S_6}{S_4}*I_4$$
 
@@ -88,14 +86,16 @@ If balance conditions are satisfied, then <code>M4</code> is in saturation.
 
 $$C_c > 0.22*C_L$$
 
-<Choosing>Given that I have chosen C<sub>L</sub> as 100 pF => I have <b>C<sub>C</sub> &gt; 22 pF</b>. Choosing <b>C<sub>C</sub> = 64 pF</b> using the Slew Rate specifications.</p>
+<p>Given that I have chosen <b>C<sub>L</sub></b> as <b>100 pF</b>, as per the above relation <b>C<sub>C</sub> &gt; 22 pF</b></p>
+
+<p>Choosing <b>C<sub>C</sub> = 64 pF</b> using the Slew Rate specifications.</p>
 
 <h3 id="results">Results</h3>
 <div>
-    I designed the circuit using LTSpice and performed a simulation. The results of the simulation are discussed below.
+    I designed the circuit using LTSpice. The results of the simulation are discussed below.
     <br><br>
     <div align="center">
-        <img width="600" src="./assets/ltspice-circuit.png">
+        <img width="800" src="./assets/ltspice-circuit.png">
     </div>
     <br>
 </div>
@@ -112,6 +112,7 @@ $$C_c > 0.22*C_L$$
     <br><br>
     <div align="center">
         <img width="300" src="./assets/operating-point-1.jpg">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <img width="300" src="./assets/operating-point-2.jpg">
     </div>
     <br>
@@ -129,7 +130,7 @@ $$C_c > 0.22*C_L$$
 <ul>
     <li>
         <strong>Optimize Transistor Sizing for Enhanced Performance</strong>
-        <p>Further investigation into transistor sizing is crucial to achieve an optimal balance between gain, bandwidth, and power consumption. By fine-tuning the sizes of the transistors in the differential pair and current mirrors, the overall performance of the op-amp can be improved. This includes optimizing the gain-bandwidth product and ensuring that the op-amp meets the required specifications.</p>
+        <p>Further investigation into transistor sizing is crucial to achieve an optimal balance between gain, bandwidth and power consumption. By fine-tuning the sizes of the transistors in the differential pair and current mirrors, the overall performance of op-amp can be improved. This includes optimizing the gain-bandwidth product and ensuring that the op-amp meets the required specifications.</p>
     </li>
     <li>
         <strong>Implement Advanced Compensation Techniques</strong>
